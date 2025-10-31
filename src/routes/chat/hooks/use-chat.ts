@@ -1,8 +1,8 @@
 import { WebSocket } from 'partysocket';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { toast } from 'sonner';
+import type { RateLimitExceededError } from "@/api-types";
 import {
-    RateLimitExceededError,
 	type BlueprintType,
 	type WebSocketMessage,
 	type CodeFixEdits,

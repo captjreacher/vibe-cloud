@@ -58,3 +58,7 @@ export class RateLimitExceededError extends SecurityError {
         );
     }
 }
+
+// src/shared/types/errors.ts
+export type MyErrorType = { message: string; code?: string };
+// add any other types you import from this module

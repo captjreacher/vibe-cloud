@@ -1,0 +1,24 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "shared/*": ["src/shared/*"]
+    },
+
+    // Ensure worker-specific ambient types don't leak into the client build
+    "types": []
+  },
+  "include": [
+    "src/**/*",
+    "client/**/*",
+    "src/types/**/*"
+  ],
+  "exclude": [
+    "worker/**/*",
+    "scripts/**/*",
+    "tests/**/*",
+    "node_modules"
+  ]
+}
