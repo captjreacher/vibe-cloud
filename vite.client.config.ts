@@ -5,6 +5,7 @@ import svgr from 'vite-plugin-svgr';
 import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig({
+   base: '/',  // ✅ important for freeautoagents.com root
   plugins: [react(), svgr()],
   resolve: {
     alias: {
@@ -34,3 +35,4 @@ export default defineConfig({
     },
   },
 });
+
