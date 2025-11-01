@@ -20,6 +20,9 @@ export default defineConfig({
         // Create .nojekyll file
         fs.writeFileSync(path.join(outDir, '.nojekyll'), '');
         
+        // Create CNAME file for custom domain
+        fs.writeFileSync(path.join(outDir, 'CNAME'), 'freeautoagents.com');
+        
         // Copy index.html to 404.html for client-side routing
         const indexPath = path.join(outDir, 'index.html');
         const notFoundPath = path.join(outDir, '404.html');
