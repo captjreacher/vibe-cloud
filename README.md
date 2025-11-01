@@ -346,6 +346,19 @@ Deploy to Cloudflare Workers:
 bun run deploy  # Builds and deploys automatically (includes remote DB migration)
 ```
 
+### Triggering a GitHub Pages rebuild
+
+If you need to force a rebuild of the static site served from GitHub Pages,
+use the helper script that dispatches the **Deploy to GitHub Pages** workflow
+against the `gh-pages` branch:
+
+```bash
+./scripts/trigger-gh-pages-deploy.sh
+```
+
+The script requires the [GitHub CLI](https://cli.github.com/) and will output a
+link to the workflow run so you can monitor its progress.
+
 ---
 
 ### Manually Deploying the Platform
