@@ -6,7 +6,29 @@ import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig({
    base: '/',  // ✅ important for freeautoagents.com root
-  plugins: [react(), svgr()],
+  plugins: [
+    react(), 
+    svgr(),
+    // Add .nojekyll and 404.html for GitHub Pages
+    {
+      name: 'github-pages-setup',
+      writeBundle() {
+        const fs = require('fs');
+        const path = require('path');
+        const outDir = 'dist/client';
+        
+        // Create .nojekyll file
+        fs.writeFileSync(path.join(outDir, '.nojekyll'), '');
+        
+        // Copy index.html to 404.html for client-side routing
+        const indexPath = path.join(outDir, 'index.html');
+        const notFoundPath = path.join(outDir, '404.html');
+        if (fs.existsSync(indexPath)) {
+          fs.copyFileSync(indexPath, notFoundPath);
+        }
+      }
+    }
+  ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

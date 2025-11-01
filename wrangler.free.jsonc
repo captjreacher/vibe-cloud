@@ -1,0 +1,17 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "vibe-cloud-free",
+	"main": "worker/index.ts",
+	"compatibility_date": "2025-08-10",
+	"compatibility_flags": ["nodejs_compat"],
+	"assets": {
+		"directory": "dist/client",
+		"not_found_handling": "single-page-application",
+		"run_worker_first": false
+	},
+	"vars": {
+		"ENVIRONMENT": "production"
+	},
+	"workers_dev": true,
+	"preview_urls": false
+}
