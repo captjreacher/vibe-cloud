@@ -46,6 +46,15 @@ jobs:
           echo "Building with vite..."
           # Use standard vite for build in CI
           npx vite build --config vite.client.config.ts --mode production
+          
+          # Create GitHub Pages files
+          echo "Creating GitHub Pages setup files..."
+          touch dist/client/.nojekyll
+          echo "freeautoagents.com" > dist/client/CNAME
+          cp dist/client/index.html dist/client/404.html
+          
+          echo "Build complete. Contents of dist/client:"
+          ls -la dist/client/
         env:
           NODE_ENV: production
         
