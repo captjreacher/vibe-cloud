@@ -27,14 +27,27 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
           
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm install
+          # Install standard vite for CI build
+          npm install vite@^5.0.0 --no-save
         
       - name: Build
-        run: npm run build:client
+        run: |
+          echo "Starting build process..."
+          echo "Node version: $(node --version)"
+          echo "NPM version: $(npm --version)"
+          echo "Checking if src directory exists..."
+          ls -la src/ || echo "src directory not found"
+          echo "Building with vite..."
+          # Use standard vite for build in CI
+          npx vite build --config vite.client.config.ts --mode production
+        env:
+          NODE_ENV: production
         
       - name: Setup Pages
         uses: actions/configure-pages@v4

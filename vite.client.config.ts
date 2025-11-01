@@ -44,8 +44,8 @@ export default defineConfig({
     chunkSizeWarningLimit: 2000,
     rollupOptions: {
       output: {
-        // Rolldown requires a FUNCTION here
-        manualChunks(id) {
+        // Compatible with both rolldown and standard vite
+        manualChunks: (id) => {
           if (id.includes('node_modules')) {
             if (
               id.includes('react') ||
