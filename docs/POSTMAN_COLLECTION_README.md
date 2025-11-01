@@ -16,7 +16,7 @@ This collection includes **100+ API endpoints** organized into logical groups:
 - 🔐 **Secrets Management** - API keys, credentials with templates (5 endpoints)
 - 🐙 **GitHub Integration** - Repository export, OAuth (2 endpoints)
 .
-## 🚀 Quick Setup
+## 🚀 Quick Setup,
 
 ### 1. Import Collection & Environment
 
