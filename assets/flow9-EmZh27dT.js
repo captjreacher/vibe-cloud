@@ -1,0 +1,1 @@
+import{ei as e,ti as t}from"./vendor-monaco-Jo5pHw6T.js";export{e as conf,t as language};
