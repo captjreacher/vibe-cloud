@@ -5,7 +5,8 @@ import svgr from 'vite-plugin-svgr';
 import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig({
-   base: '/',  // ✅ important for freeautoagents.com root
+  base: '/',  // ✅ important for freeautoagents.com root
+  root: '.',
   plugins: [
     react(), 
     svgr()
@@ -21,6 +22,7 @@ export default defineConfig({
     sourcemap: true,
     chunkSizeWarningLimit: 2000,
     rollupOptions: {
+      input: 'index.html',
       output: {
         // Compatible with both rolldown and standard vite
         manualChunks: (id) => {
