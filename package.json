@@ -6,7 +6,7 @@
 
 	"scripts": {
     "setup": "tsx scripts/setup.ts",
-    "dev": "DEV_MODE=true vite",
+    "dev": "vite --local",
     "typecheck:client": "tsc -p tsconfig.client.json --noEmit",
     "build:client": "vite build --config vite.client.config.ts",
     "deploy:frontend": "npm run build:client && npx gh-pages -d dist/client",

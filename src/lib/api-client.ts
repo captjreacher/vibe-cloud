@@ -198,7 +198,7 @@ class ApiClient {
 					const expiresIn = data.data.expiresIn || 7200; // Default 2 hours
 					this.csrfTokenInfo = {
 						token: data.data.token,
-						expiresAt: Date.now() + (expiresIn * 1000)
+						expiresAt: Date.now() + expiresIn * 1000,
 					};
 					return true;
 				}
