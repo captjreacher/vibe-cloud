@@ -6,7 +6,7 @@ if ! command -v gh >/dev/null 2>&1; then
   exit 1
 fi
 
-workflow_name="Deploy to GitHub Pages"
+workflow_name="Deploy GitHub Pages from gh-pages"
 
 # Trigger the workflow dispatch.
 echo "Triggering '${workflow_name}' workflow on gh-pages..."
