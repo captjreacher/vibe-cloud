@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import svgr from 'vite-plugin-svgr';
+import tailwindcss from '@tailwindcss/vite';
 import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig({
@@ -9,7 +10,8 @@ export default defineConfig({
   root: '.',
   plugins: [
     react(), 
-    svgr()
+    svgr(),
+    tailwindcss()
   ],
   resolve: {
     alias: {
